@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — LinkedApply Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --primary: #6366f1;
+      --accent: #06b6d4;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 32px;
+      max-width: 900px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+    nav a:hover { color: #fff; }
+    .container {
+      max-width: 800px;
+      margin: 48px auto;
+      padding: 0 24px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .date {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-size: 20px;
+      margin: 32px 0 12px;
+      color: #fff;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+    }
+    p, ul {
+      margin-bottom: 16px;
+      color: #cbd5e1;
+    }
+    ul { padding-left: 24px; }
+    li { margin-bottom: 6px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+      font-size: 14px;
+    }
+    th {
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      font-weight: 600;
+    }
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 80px;
+    }
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin: 0 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">⚡ LinkedApply Pro</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html" style="color: #fff;">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="https://chromewebstore.google.com/detail/ajgnfmojakmcoicgnmnfefiliaeikmah?utm_source=item-share-cb" target="_blank" style="color: #818cf8;">Add to Chrome</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <div class="date">Last updated: September 2026</div>
+
+    <h2>1. Overview</h2>
+    <p>LinkedApply Pro is a privacy-first Chrome browser extension that assists job seekers in automating and streamlining job applications on LinkedIn. This policy details our commitment to data transparency, local data storage, and zero-telemetry operations.</p>
+
+    <h2>2. Zero Remote Server Storage</h2>
+    <p><strong>LinkedApply Pro does not operate remote servers to store, collect, or monitor your personal data.</strong></p>
+    <p>All data entered into the extension — including your contact details, resume text, application preferences, API keys, and job application history — is stored exclusively on your device using Chrome's local extension storage (<code>chrome.storage.local</code>).</p>
+
+    <h2>3. Data Stored Locally On Your Device</h2>
+    <ul>
+      <li><strong>Profile Information:</strong> Name, contact email, phone number, address, and headline.</li>
+      <li><strong>Application Preferences:</strong> Screening answers, years of experience, notice period, and salary expectations (LPA).</li>
+      <li><strong>Resume Data:</strong> Extracted plain text from your uploaded PDF resume.</li>
+      <li><strong>Job History:</strong> Status of jobs applied, skipped, or failed during your automation sessions.</li>
+      <li><strong>API Keys (BYOK):</strong> Your personal API keys (Google Gemini, OpenAI, Groq, DeepSeek).</li>
+    </ul>
+
+    <h2>4. AI Service Providers (Bring Your Own Key)</h2>
+    <p>When you enable AI features (such as screening question answering, resume tailoring, or job match scoring), requests are made directly from your browser to your selected AI provider using your own API key:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Provider</th>
+          <th>Purpose</th>
+          <th>Data Sent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google Gemini API</td>
+          <td>Question answering &amp; tailoring</td>
+          <td>Job description snippets, relevant resume sections</td>
+        </tr>
+        <tr>
+          <td>OpenAI / Custom APIs</td>
+          <td>Question answering &amp; tailoring</td>
+          <td>Job description snippets, relevant resume sections</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Your API keys and prompt data are sent directly via encrypted HTTPS to the provider and never pass through any intermediary proxy servers.</p>
+
+    <h2>5. LinkedIn Interactions</h2>
+    <p>The extension interacts strictly within your active LinkedIn browser tab to read job listings, detect application forms, and fill in responses based on your configured preferences. It does not access, store, or transmit your LinkedIn login credentials or passwords.</p>
+
+    <h2>6. Data Deletion &amp; Control</h2>
+    <p>You maintain full control over your data at all times:</p>
+    <ul>
+      <li>You can clear your job application history at any time from <strong>Settings &rarr; Account &rarr; Clear Job History</strong>.</li>
+      <li>You can purge all stored extension data with <strong>Reset Extension</strong>.</li>
+      <li>Uninstalling the extension instantly and permanently deletes all local storage from your browser.</li>
+    </ul>
+
+    <h2>7. Permissions &amp; Disclosures</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Functional Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>storage</code> / <code>unlimitedStorage</code></td>
+          <td>Persists your settings, resume text, and application logs locally.</td>
+        </tr>
+        <tr>
+          <td><code>activeTab</code> / <code>tabs</code></td>
+          <td>Enables communication between the extension and your LinkedIn job search tab.</td>
+        </tr>
+        <tr>
+          <td><code>sidePanel</code></td>
+          <td>Renders the real-time assistive side panel interface.</td>
+        </tr>
+        <tr>
+          <td>Host Permissions (<code>*://*.linkedin.com/*</code>)</td>
+          <td>Automates LinkedIn Easy Apply forms in your active session.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>8. Contact</h2>
+    <p>If you have questions or feedback regarding this Privacy Policy, please visit our Chrome Web Store listing or contact support via our official channels.</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 LinkedApply Pro. All rights reserved.</p>
+    <div style="margin-top: 12px;">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="https://chromewebstore.google.com/detail/ajgnfmojakmcoicgnmnfefiliaeikmah?utm_source=item-share-cb" target="_blank">Chrome Web Store</a>
+    </div>
+  </footer>
+</body>
+</html>
