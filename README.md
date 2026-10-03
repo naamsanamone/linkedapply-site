@@ -22,14 +22,15 @@ Official public website, interactive user guide manual, Privacy Policy, and Term
 ## 🌟 Key Features
 
 ### 1. 🎨 Visual ATS Resume Builder
-Build and customize professional, ATS-compliant resumes with 10 industry-standard templates (Classic, Modern, Creative, Minimalist, Technical, etc.). Customize accent colors, re-order sections dynamically, and export pixel-perfect PDFs or save directly for Easy Apply.
+Build and customize professional, ATS-compliant resumes with 11 industry-standard templates (Classic, Modern, Creative, Minimalist, Technical, etc.). Customize accent colors, re-order sections dynamically, and export pixel-perfect PDFs or save directly for Easy Apply.
 
 ![ATS Resume Builder](images/1_resume_builder.jpg)
+![Resume Templates Gallery](images/5_templates.jpg)
 
 ### 2. 🎯 Job-Specific AI Resume Tailoring
 Paste target Job Descriptions to calculate dual-engine match scores (Keyword match %, Semantic embeddings, and Format/Completeness). Tailor summaries and bullet points automatically using the Google XYZ formula (*"Accomplished [X] as measured by [Y] by doing [Z]"*).
 
-![AI Resume Tailoring](images/5_templates.jpg)
+![AI Resume Tailoring](images/builder_tailor.png)
 
 ### 3. ⚡ 1-Click LinkedIn Easy Apply Automation
 Intelligently completes multi-step LinkedIn Easy Apply forms, pre-fills answers from your configured profile bank, handles radio/dropdown questions, attaches your tailored resume, and advances forms seamlessly.
