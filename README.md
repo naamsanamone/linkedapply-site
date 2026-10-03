@@ -1,7 +1,7 @@
 # LinkedApply Pro — Official Website, Docs & User Guide
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-LinkedApply_Pro-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/ajgnfmojakmcoicgnmnfefiliaeikmah?utm_source=item-share-cb)
-[![Version](https://img.shields.io/badge/Version-1.2.0-6366F1?style=for-the-badge)](https://chromewebstore.google.com/detail/ajgnfmojakmcoicgnmnfefiliaeikmah?utm_source=item-share-cb)
+[![Version](https://img.shields.io/badge/Version-1.2.1-6366F1?style=for-the-badge)](https://chromewebstore.google.com/detail/ajgnfmojakmcoicgnmnfefiliaeikmah?utm_source=item-share-cb)
 [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Active-success?style=for-the-badge&logo=github)](https://naamsanamone.github.io/linkedapply-site/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
