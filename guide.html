@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedApply Pro — Official User Guide & Manual</title>
+  <meta name="description" content="Complete step-by-step user guide and manual for LinkedApply Pro. Learn how to set up free AI keys, build ATS-optimized resumes, tailor resumes per job, and automate LinkedIn Easy Apply.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --bg-surface: #0f1523;
+      --bg-surface-elevated: #161e32;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --primary-light: rgba(99, 102, 241, 0.15);
+      --accent: #06b6d4;
+      --accent-light: rgba(6, 182, 212, 0.15);
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --text: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --radius: 12px;
+      --sidebar-width: 290px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    /* Top Navigation Bar */
+    header.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: 17px;
+    }
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+    .badge-pro {
+      background: linear-gradient(135deg, #6366f1, #06b6d4);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 10px;
+      letter-spacing: 0.5px;
+    }
+    .nav-tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+      border-left: 1px solid var(--card-border);
+      padding-left: 14px;
+      margin-left: 4px;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border-color: var(--card-border);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #4338ca);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Container & Layout */
+    .docs-container {
+      display: flex;
+      max-width: 1440px;
+      margin: 0 auto;
+      min-height: calc(100vh - 65px);
+    }
+
+    /* Sticky Sidebar Navigation */
+    aside.docs-sidebar {
+      width: var(--sidebar-width);
+      position: sticky;
+      top: 65px;
+      height: calc(100vh - 65px);
+      overflow-y: auto;
+      padding: 24px 18px;
+      border-right: 1px solid var(--card-border);
+      background: rgba(9, 13, 22, 0.6);
+      flex-shrink: 0;
+    }
+    .sidebar-search {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .sidebar-search input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: #fff;
+      padding: 8px 12px 8px 34px;
+      border-radius: 8px;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .sidebar-search input:focus {
+      border-color: var(--primary);
+    }
+    .sidebar-search svg {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      fill: var(--text-muted);
+      width: 14px;
+      height: 14px;
+    }
+    .sidebar-menu {
+      list-style: none;
+    }
+    .menu-group {
+      margin-bottom: 22px;
+    }
+    .menu-group-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      padding-left: 10px;
+    }
+    .menu-item a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 10px;
+      border-radius: 6px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.15s ease;
+    }
+    .menu-item a:hover {
+      background: rgba(255, 255, 255, 0.04);
+      color: #fff;
+    }
+    .menu-item a.active {
+      background: var(--primary-light);
+      color: #a5b4fc;
+      font-weight: 600;
+      border-left: 2px solid var(--primary);
+    }
+
+    /* Main Content Area */
+    main.docs-content {
+      flex: 1;
+      padding: 40px 56px 120px;
+      max-width: 980px;
+    }
+
+    /* Hero Banner */
+    .docs-hero {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(6, 182, 212, 0.06));
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .docs-hero::after {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.2), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(129, 140, 248, 0.4);
+      color: #c7d2fe;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .hero-badge span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .docs-hero h1 {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .docs-hero p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 720px;
+      margin-bottom: 20px;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+      align-items: center;
+    }
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Section Styling */
+    section.doc-section {
+      margin-bottom: 64px;
+      scroll-margin-top: 85px;
+    }
+    .section-header {
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 14px;
+    }
+    .section-number {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin: 28px 0 12px;
+    }
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    /* Step Cards */
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .step-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .step-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+    }
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+    .step-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    /* Screenshot Container */
+    .screenshot-figure {
+      margin: 24px 0;
+      background: var(--bg-surface);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+    .screenshot-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: zoom-in;
+      transition: transform 0.2s ease;
+    }
+    .screenshot-caption {
+      padding: 12px 18px;
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--bg-surface-elevated);
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Callouts / Alerts */
+    .callout {
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-left: 4px solid;
+      background: var(--bg-surface);
+      font-size: 14px;
+    }
+    .callout-info {
+      border-color: var(--accent);
+      background: rgba(6, 182, 212, 0.06);
+    }
+    .callout-success {
+      border-color: var(--success);
+      background: rgba(16, 185, 129, 0.06);
+    }
+    .callout-warning {
+      border-color: var(--warning);
+      background: rgba(245, 158, 11, 0.06);
+    }
+    .callout-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .callout-info .callout-title { color: var(--accent); }
+    .callout-success .callout-title { color: var(--success); }
+    .callout-warning .callout-title { color: var(--warning); }
+
+    /* Tables */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 20px 0;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: left;
+    }
+    th {
+      background: var(--bg-surface-elevated);
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--card-border);
+      color: var(--text-secondary);
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255, 255, 255, 0.02); }
+
+    /* Code Snippets */
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #cbd5e1;
+    }
+    .code-block {
+      background: var(--bg-surface);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 14px 0;
+    }
+    .btn-copy {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: #fff;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-copy:hover {
+      background: var(--primary);
+    }
+
+    /* Grid for Features & Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin: 20px 0;
+    }
+    .feature-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .feature-card-icon {
+      font-size: 24px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .feature-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .feature-card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* Image Modal (Lightbox) */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      cursor: zoom-out;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 95%;
+      max-height: 95%;
+      border-radius: 8px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Print Optimization */
+    @media print {
+      body {
+        background: #fff !important;
+        color: #111 !important;
+      }
+      header.top-nav, aside.docs-sidebar, .btn, .lightbox, .screenshot-caption span.zoom-hint {
+        display: none !important;
+      }
+      main.docs-content {
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      .docs-hero {
+        background: #f8fafc !important;
+        border: 1px solid #cbd5e1 !important;
+        color: #111 !important;
+        padding: 20px !important;
+      }
+      .docs-hero h1, h2, h3, h4, .step-title {
+        color: #111 !important;
+      }
+      p, td, .callout {
+        color: #333 !important;
+      }
+      .step-card, .feature-card, .table-wrapper, .callout {
+        background: #fff !important;
+        border: 1px solid #e2e8f0 !important;
+        page-break-inside: avoid;
+      }
+      .screenshot-figure {
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+        page-break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 900px) {
+      aside.docs-sidebar { display: none; }
+      main.docs-content { padding: 24px 20px 80px; }
+      .nav-tagline { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <a href="index.html" class="nav-brand">
+      <img src="images/icon.png" alt="Logo" class="brand-icon">
+      <span>LinkedApply</span>
+      <span class="badge-pro">PRO</span>
+      <span class="nav-tagline">User Guide & Manual</span>
+    </a>
+    <div class="nav-actions">
+      <a href="docs/LinkedApply_Pro_User_Guide.pdf" download class="btn btn-secondary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </a>
+      <button class="btn btn-secondary" onclick="window.print()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+        Print
+      </button>
+      <a href="index.html" class="btn btn-primary">
+        Back to Home
+      </a>
+    </div>
+  </header>
+
+  <div class="docs-container">
+    <!-- Sidebar Navigation -->
+    <aside class="docs-sidebar">
+      <div class="sidebar-search">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" id="guide-search" placeholder="Search guide topics..." onkeyup="filterGuideTopics()">
+      </div>
+      <ul class="sidebar-menu" id="menu-list">
+        <li class="menu-group">
+          <div class="menu-group-title">Getting Started</div>
+          <div class="menu-item"><a href="#quick-start" class="active">1. Quick Start & Setup</a></div>
+          <div class="menu-item"><a href="#ai-setup">2. Bring Your Own AI (BYOK)</a></div>
+          <div class="menu-item"><a href="#profile-setup">3. Profile & Auto-Fill Q&A</a></div>
+        </li>
+        <li class="menu-group">
+          <div class="menu-group-title">Resume Suite</div>
+          <div class="menu-item"><a href="#resume-builder">4. Visual Resume Builder</a></div>
+          <div class="menu-item"><a href="#resume-tailor">5. AI Resume Tailoring</a></div>
+        </li>
+        <li class="menu-group">
+          <div class="menu-group-title">Automation & Tracker</div>
+          <div class="menu-item"><a href="#auto-apply">6. LinkedIn Auto-Apply Bot</a></div>
+          <div class="menu-item"><a href="#dashboard-analytics">7. Dashboard & Tracking</a></div>
+        </li>
+        <li class="menu-group">
+          <div class="menu-group-title">Safety & Support</div>
+          <div class="menu-item"><a href="#account-safety">8. Safety & Daily Limits</a></div>
+          <div class="menu-item"><a href="#troubleshooting">9. FAQ & Troubleshooting</a></div>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="docs-content">
+      <!-- Hero -->
+      <div class="docs-hero">
+        <div class="hero-badge"><span></span> OFFICIAL USER MANUAL v1.2.0</div>
+        <h1>Mastering LinkedApply Pro</h1>
+        <p>A comprehensive, step-by-step handbook covering AI configuration, ATS resume building, job-tailoring, safe auto-applying on LinkedIn, and application tracking.</p>
+        <div class="hero-meta">
+          <span>⏱️ 5-Minute Read</span>
+          <span>🔒 100% Client-Side Privacy</span>
+          <span>🆓 Zero Subscriptions (BYOK)</span>
+        </div>
+        <div class="hero-actions" style="margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="docs/LinkedApply_Pro_User_Guide.pdf" download class="btn btn-primary" style="font-size: 13.5px; padding: 10px 20px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download PDF Manual
+          </a>
+          <a href="docs/LinkedApply_Pro_User_Guide.docx" download class="btn btn-secondary" style="font-size: 13.5px; padding: 10px 20px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Download Word Doc (.docx)
+          </a>
+        </div>
+      </div>
+
+      <!-- Section 1: Quick Start -->
+      <section id="quick-start" class="doc-section">
+        <div class="section-header">
+          <div class="section-number">Section 01</div>
+          <h2>🚀 Quick Start & Installation</h2>
+        </div>
+        <p>LinkedApply Pro is built on Manifest V3. All code, settings, resumes, and API requests execute directly on your local device—no remote servers or middleman databases are involved.</p>
+
+        <div class="steps-container">
+          <div class="step-card">
+            <span class="step-badge">1</span>
+            <span class="step-title">Load the Extension in Google Chrome</span>
+            <p>Open <code>chrome://extensions</code> in your Chrome browser. Enable <strong>Developer mode</strong> in the top-right corner, click <strong>Load unpacked</strong>, and select the <code>extension/dist</code> folder (or install directly from the Chrome Web Store).</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">2</span>
+            <span class="step-title">Pin LinkedApply Pro to your Toolbar</span>
+            <p>Click Chrome's puzzle piece icon 🧩 in the top toolbar, find <strong>LinkedApply Pro</strong>, and click the pin icon 📌. This gives you instant 1-click access to the popup controls on any tab.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">3</span>
+            <span class="step-title">Explore the 4 Core Environments</span>
+            <p>LinkedApply Pro provides four integrated workspaces:</p>
+            <div class="grid-2">
+              <div class="feature-card">
+                <div class="feature-card-icon">⚡</div>
+                <h4>Extension Popup</h4>
+                <p>Quick start/stop button, live application counter, and 1-click navigation from any LinkedIn page.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-icon">📊</div>
+                <h4>Sidepanel Dashboard</h4>
+                <p>Runs alongside LinkedIn: Overview stats, daily goal progress, and Kanban job pipeline.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-icon">📄</div>
+                <h4>Visual Resume Builder</h4>
+                <p>Full-page studio with 11 professional templates, color picker, and AI job-tailoring drawer.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-icon">⚙️</div>
+                <h4>Options & Settings</h4>
+                <p>Profile form, pre-filled question answers, bot pacing speed, and AI API keys.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="screenshot-figure">
+          <img src="images/4_popup.jpg" alt="LinkedApply Pro in action on LinkedIn" onclick="openLightbox(this.src)">
+          <div class="screenshot-caption">
+            <span>Fig 1.1: Extension popup running live on a LinkedIn job search page</span>
+            <span class="zoom-hint">🔍 Click image to enlarge</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: BYOK AI Setup -->
+      <section id="ai-setup" class="doc-section">
+        <div class="section-header">
+          <div class="section-number">Section 02</div>
+          <h2>🤖 Bring Your Own AI (BYOK) Configuration</h2>
+        </div>
+        <p>LinkedApply Pro uses a <strong>Bring Your Own Key (BYOK)</strong> model. Instead of paying a $30-$50/month subscription, you connect your own API key directly. All AI features—including question answering, keyword gap analysis, and bullet point rewriting—are completely free or cost fractions of a cent per job.</p>
+
+        <div class="callout callout-success">
+          <div class="callout-title">💡 Recommended: Google Gemini (100% Free)</div>
+          <p>Google offers a generous free tier for Google Gemini Flash with thousands of free API calls per day. This is more than enough for hundreds of daily applications without spending a dime.</p>
+        </div>
+
+        <h3>Step-by-Step Gemini Setup (Takes 60 Seconds)</h3>
+        <div class="steps-container">
+          <div class="step-card">
+            <span class="step-badge">1</span>
+            <span class="step-title">Get your Free Gemini API Key</span>
+            <p>Visit Google AI Studio and sign in with your Google account. Click <strong>Create API Key</strong>.</p>
+            <div class="code-block">
+              <span>https://aistudio.google.com/app/apikey</span>
+              <button class="btn-copy" onclick="copyText('https://aistudio.google.com/app/apikey')">Copy URL</button>
+            </div>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">2</span>
+            <span class="step-title">Paste in LinkedApply Settings</span>
+            <p>Open LinkedApply Pro Settings, navigate to the <strong>AI Settings</strong> tab on the left sidebar. Set Provider to <strong>Google Gemini</strong>, leave Model as <code>gemini-2.5-flash</code>, and paste your API key.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">3</span>
+            <span class="step-title">Test Connection & Save</span>
+            <p>Click <strong>Test Connection</strong>. You should see a green checkmark indicating <code>Connected!</code>. Then click <strong>Save AI Settings</strong>.</p>
+          </div>
+        </div>
+
+        <div class="screenshot-figure">
+          <img src="images/3_ai_settings.jpg" alt="AI Configuration Screen" onclick="openLightbox(this.src)">
+          <div class="screenshot-caption">
+            <span>Fig 2.1: Multi-Model AI Settings page with usage metrics and cost tracker</span>
+            <span class="zoom-hint">🔍 Click image to enlarge</span>
+          </div>
+        </div>
+
+        <h3>Alternative Supported Providers</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Provider</th>
+                <th>Recommended Model</th>
+                <th>Cost per 100 Jobs</th>
+                <th>Best For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Google Gemini</strong></td>
+                <td><code>gemini-2.5-flash</code></td>
+                <td><strong>$0.00</strong> (Free Tier)</td>
+                <td>Best overall — fast, high intelligence, completely free</td>
+              </tr>
+              <tr>
+                <td><strong>OpenAI</strong></td>
+                <td><code>gpt-4o-mini</code></td>
+                <td>~$0.04</td>
+                <td>Ultra-reliable structured output formatting</td>
+              </tr>
+              <tr>
+                <td><strong>DeepSeek</strong></td>
+                <td><code>deepseek-chat</code></td>
+                <td>~$0.02</td>
+                <td>Budget-conscious users wanting strong reasoning</td>
+              </tr>
+              <tr>
+                <td><strong>Custom Endpoint</strong></td>
+                <td>OpenAI-compatible</td>
+                <td>Varies</td>
+                <td>Local LLMs (Ollama / LMStudio / vLLM) for total offline usage</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Profile Setup -->
+      <section id="profile-setup" class="doc-section">
+        <div class="section-header">
+          <div class="section-number">Section 03</div>
+          <h2>📋 Profile Setup & Pre-Filled Question Answers</h2>
+        </div>
+        <p>LinkedIn Easy Apply forms frequently ask repetitive screening questions (e.g. years of experience, sponsorship, salary, notice period). Configuring your profile ensures these are answered accurately and instantly.</p>
+
+        <div class="screenshot-figure">
+          <img src="images/settings_questions.png" alt="Default Question Answers" onclick="openLightbox(this.src)">
+          <div class="screenshot-caption">
+            <span>Fig 3.1: Default Question Answers configuration</span>
+            <span class="zoom-hint">🔍 Click image to enlarge</span>
+          </div>
+        </div>
+
+        <h3>Key Screening Form Fields</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Example Value</th>
+                <th>How the Bot Uses It</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Years of Experience</strong></td>
+                <td><code>3</code>, <code>5</code>, <code>8</code></td>
+                <td>Fills numeric experience inputs for your primary profession.</td>
+              </tr>
+              <tr>
+                <td><strong>Visa Sponsorship</strong></td>
+                <td><code>No</code> / <code>Yes</code></td>
+                <td>Answers "Will you now or in the future require sponsorship?"</td>
+              </tr>
+              <tr>
+                <td><strong>US Citizenship / Eligibility</strong></td>
+                <td><code>Yes</code> / <code>No</code></td>
+                <td>Handles legal authorization and right-to-work screening dropdowns.</td>
+              </tr>
+              <tr>
+                <td><strong>Notice Period (Days)</strong></td>
+                <td><code>0</code> (Immediate), <code>15</code>, <code>30</code></td>
+                <td>Answers availability and start date questions.</td>
+              </tr>
+              <tr>
+                <td><strong>Expected Salary</strong></td>
+                <td><code>120000</code> or local currency LPA</td>
+                <td>Fills compensation expectations without manual typing.</td>
+              </tr>
+              <tr>
+                <td><strong>Default Cover Letter</strong></td>
+                <td>Markdown or plain text</td>
+                <td>Automatically uploaded or pasted when a cover letter is requested.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-title">🧠 Smart AI Fallback for Unknown Questions</div>
+          <p>When an application form asks a non-standard question not found in your default answers (e.g. <em>"Have you worked with Kubernetes in an enterprise cluster?"</em>), LinkedApply Pro automatically consults your AI provider and uploaded resume to draft a factual, tailored answer in seconds.</p>
+        </div>
+      </section>
+
+      <!-- Section 4: Resume Builder -->
+      <section id="resume-builder" class="doc-section">
+        <div class="section-header">
+          <div class="section-number">Section 04</div>
+          <h2>📄 Visual Resume Builder</h2>
+        </div>
+        <p>LinkedApply Pro includes a full-fledged, standalone Visual Resume Builder designed for maximum ATS (Applicant Tracking System) parseability. It generates single and multi-page professional resumes directly in your browser.</p>
+
+        <div class="screenshot-figure">
+          <img src="images/1_resume_builder.jpg" alt="Visual Resume Builder" onclick="openLightbox(this.src)">
+          <div class="screenshot-caption">
+            <span>Fig 4.1: The interactive Visual Resume Builder editing the Modern Resume template</span>
+            <span class="zoom-hint">🔍 Click image to enlarge</span>
+          </div>
+        </div>
+
+        <h3>Key Features of the Builder</h3>
+        <div class="steps-container">
+          <div class="step-card">
+            <span class="step-badge">1</span>
+            <span class="step-title">11 Professional ATS Templates</span>
+            <p>Choose from 11 recruiter-tested designs: Modern, Classic, Technical, Inspired, Creative, Header Band, Straightforward, and Sidebar Left/Right. Switch anytime without losing data.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">2</span>
+            <span class="step-title">Drag & Drop Section Reordering</span>
+            <p>Rearrange Basic Details, Skills, Experience, Education, Projects, Certifications, Achievements, and Volunteering. Add custom sections with a single click.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">3</span>
+            <span class="step-title">Live Color Themes</span>
+            <p>Select tailored palette combinations (Indigo, Emerald, Navy, Crimson) that match your target industry's conventions.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">4</span>
+            <span class="step-title">One-Click PDF Export & Easy Apply Sync</span>
+            <p>Download a print-ready vector PDF instantly, or click <strong>Save for Easy Apply</strong> to automatically set your tailored resume as the default file uploaded during automation.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="screenshot-figure">
+            <img src="images/builder_templates.png" alt="Template Selector" onclick="openLightbox(this.src)">
+            <div class="screenshot-caption"><span>Fig 4.2: 11 Live Template Previews</span></div>
+          </div>
+          <div class="screenshot-figure">
+            <img src="images/builder_colors.png" alt="Color Palette Selector" onclick="openLightbox(this.src)">
+            <div class="screenshot-caption"><span>Fig 4.3: Custom Color Schemes</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: AI Resume Tailor -->
+      <section id="resume-tailor" class="doc-section">
+        <div class="section-header">
+          <div class="section-number">Section 05</div>
+          <h2>✨ Job-Specific AI Resume Tailoring</h2>
+        </div>
+        <p>A generic resume converts poorly. Recruiter ATS algorithms score your resume against the exact keywords and skills in the job posting. LinkedApply Pro's AI Tailoring engine analyzes any job description and rewrites your resume sections to achieve high ATS match scores.</p>
+
+        <div class="screenshot-figure">
+          <img src="images/5_templates.jpg" alt="AI Resume Tailor Drawer" onclick="openLightbox(this.src)">
+          <div class="screenshot-caption">
+            <span>Fig 5.1: The AI Tailor drawer performing job description gap analysis</span>
+            <span class="zoom-hint">🔍 Click image to enlarge</span>
+          </div>
+        </div>
+
+        <h3>How to Tailor in 3 Steps:</h3>
+        <div class="steps-container">
+          <div class="step-card">
+            <span class="step-badge">1</span>
+            <span class="step-title">Open the Tailor Drawer</span>
+            <p>In the Resume Builder, click <strong>✨ Tailor Resume</strong> in the top navigation bar to slide out the tailoring workbench.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">2</span>
+            <span class="step-title">Paste the Target Job Description</span>
+            <p>Copy the job requirements from LinkedIn or company careers site into the textarea and click <strong>🔍 Analyze</strong>.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">3</span>
+            <span class="step-title">Review Gap Analysis & Auto-Tailor</span>
+            <p>The engine runs an offline smart-matcher to identify matched vs missing skills, computes an ATS score, and suggests rewritten bullet points using Google's XYZ formula (<em>"Accomplished [X] as measured by [Y] by doing [Z]"</em>). Click <strong>⚡ Auto-Tailor All</strong> to apply the enhancements.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: LinkedIn Auto Apply -->
+      <section id="auto-apply" class="doc-section">
+        <div class="section-header">
+          <div class="section-number">Section 06</div>
+          <h2>⚡ LinkedIn Auto-Apply Automation</h2>
+        </div>
+        <p>Once your profile and resume are set up, you can start applying to dozens of relevant jobs with a single click while maintaining safe browsing habits.</p>
+
+        <div class="screenshot-figure">
+          <img src="images/settings_bot.png" alt="Bot Settings Configuration" onclick="openLightbox(this.src)">
+          <div class="screenshot-caption">
+            <span>Fig 6.1: Bot Automation Settings (Speed mode, click gap, and match score filters)</span>
+            <span class="zoom-hint">🔍 Click image to enlarge</span>
+          </div>
+        </div>
+
+        <h3>Automation Modes & Pacing</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Setting</th>
+                <th>Recommended Value</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Speed Mode</strong></td>
+                <td><code>Normal (2-5s delay)</code></td>
+                <td>Emulates natural human reading and clicking intervals to protect your LinkedIn account.</td>
+              </tr>
+              <tr>
+                <td><strong>Click Gap</strong></td>
+                <td><code>2000 ms</code> (2.0s)</td>
+                <td>Time delay between successive form interactions.</td>
+              </tr>
+              <tr>
+                <td><strong>JD Match Filter</strong></td>
+                <td><code>Top Match (80%+) & High (60-79%)</code></td>
+                <td>Only applies to jobs where your qualifications strongly match the requirements.</td>
+              </tr>
+              <tr>
+                <td><strong>Pre-Apply Review</strong></td>
+                <td><code>Enabled</code> (Optional)</td>
+                <td>Pauses before clicking final submit, allowing you to review all filled fields.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>How to Run an Automation Session:</h3>
+        <ol style="margin-left: 20px; color: var(--text-secondary); line-height: 2;">
+          <li>Navigate to <a href="https://www.linkedin.com/jobs" target="_blank" style="color: var(--accent);">linkedin.com/jobs</a> in Chrome.</li>
+          <li>Enter your job title and preferred location (e.g. <em>"Frontend Engineer"</em> in <em>"Remote"</em>).</li>
+          <li>Ensure the <strong>Easy Apply</strong> filter toggle is active on LinkedIn.</li>
+          <li>Open the LinkedApply Pro popup or sidepanel and click <strong>▶ Start</strong>.</li>
+          <li>The bot will scroll through listings, verify match criteria, fill application questions, upload your resume, and submit.</li>
+        </ol>
+      </section>
+
+      <!-- Section 7: Dashboard & Tracking -->
+      <section id="dashboard-analytics" class="doc-section">
+        <div class="section-header">
+          <div class="section-number">Section 07</div>
+          <h2>📊 Sidepanel Dashboard & Application Tracking</h2>
+        </div>
+        <p>Monitor your job search pipeline in real-time through the sidepanel dashboard that docks right beside LinkedIn.</p>
+
+        <div class="screenshot-figure">
+          <img src="images/2_dashboard.jpg" alt="Sidepanel Dashboard Overview & Jobs" onclick="openLightbox(this.src)">
+          <div class="screenshot-caption">
+            <span>Fig 7.1: Real-time sidepanel dashboard (Overview tab on left; Jobs pipeline tab on right)</span>
+            <span class="zoom-hint">🔍 Click image to enlarge</span>
+          </div>
+        </div>
+
+        <h3>Dashboard Features</h3>
+        <div class="grid-2">
+          <div class="feature-card">
+            <h4>📈 Live Session Metrics</h4>
+            <p>Track applications sent today, total applications, average match percentage, and estimated hours saved.</p>
+          </div>
+          <div class="feature-card">
+            <h4>🎯 Daily Goal Tracker</h4>
+            <p>Set a daily application target (e.g. 25/day). The visual progress bar tracks completion and stops when your goal is met.</p>
+          </div>
+          <div class="feature-card">
+            <h4>📋 Kanban Job Pipeline</h4>
+            <p>View all applied jobs categorized by status: Applied, Interviewing, Offer, or Archived with direct links to job posts.</p>
+          </div>
+          <div class="feature-card">
+            <h4>❌ Failed Application Inspector</h4>
+            <p>Shows any application that could not be completed (e.g. external complex redirects) with 1-click logs to finish manually.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 8: Safety & Best Practices -->
+      <section id="account-safety" class="doc-section">
+        <div class="section-header">
+          <div class="section-number">Section 08</div>
+          <h2>🛡️ LinkedIn Account Safety & Best Practices</h2>
+        </div>
+        <p>Automating job searches requires discipline to keep your LinkedIn account in good standing. Follow these golden rules for risk-free operation:</p>
+
+        <div class="steps-container">
+          <div class="step-card">
+            <span class="step-badge">1</span>
+            <span class="step-title">Respect Safe Daily Limits</span>
+            <p>• <strong>New accounts (< 6 months old)</strong>: 15–25 applications per day.<br>• <strong>Established accounts (> 1 year old)</strong>: 40–60 applications per day.<br>• Avoid setting daily goals higher than 75 to keep activity within typical human thresholds.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">2</span>
+            <span class="step-title">Keep Human Pacing Active</span>
+            <p>Always use <strong>Normal Speed Mode</strong> with 2–5 second delays. Never reduce click gaps to zero.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">3</span>
+            <span class="step-title">Don't Run Multiple Bots Simultaneously</span>
+            <p>Do not run other automation tools or scrapers on LinkedIn at the same time. Let LinkedApply Pro handle your sessions smoothly.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 9: FAQ -->
+      <section id="troubleshooting" class="doc-section">
+        <div class="section-header">
+          <div class="section-number">Section 09</div>
+          <h2>❓ FAQ & Troubleshooting</h2>
+        </div>
+
+        <div class="step-card" style="margin-bottom: 14px;">
+          <h4 style="color:#fff; margin-bottom: 6px;">Q: Is LinkedApply Pro really 100% free?</h4>
+          <p>Yes. The extension itself is completely free with no subscriptions. When using Google Gemini for AI question answering, Google's free tier provides thousands of free requests daily at zero cost.</p>
+        </div>
+
+        <div class="step-card" style="margin-bottom: 14px;">
+          <h4 style="color:#fff; margin-bottom: 6px;">Q: Are my LinkedIn passwords or personal data collected?</h4>
+          <p>Never. LinkedApply Pro runs 100% client-side inside your browser sandbox. It never touches your account password, and your resumes and settings are saved exclusively in your browser's local storage.</p>
+        </div>
+
+        <div class="step-card" style="margin-bottom: 14px;">
+          <h4 style="color:#fff; margin-bottom: 6px;">Q: What if a job requires an external redirect instead of Easy Apply?</h4>
+          <p>LinkedApply Pro specifically handles LinkedIn Easy Apply modals. When a job redirects to Workday, Greenhouse, or external career portals, the bot flags it and gracefully skips or logs it under Failed/External so you can apply manually if desired.</p>
+        </div>
+
+        <div class="step-card" style="margin-bottom: 14px;">
+          <h4 style="color:#fff; margin-bottom: 6px;">Q: How do I back up or transfer my resumes and settings?</h4>
+          <p>Go to Settings → <strong>Account</strong>. Click <strong>Export Data</strong> to download a complete JSON backup of all your saved resumes, profile information, and application history. You can restore it on any computer anytime.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Enlarged screenshot">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert('Copied to clipboard: ' + text);
+    }
+    function filterGuideTopics() {
+      const q = document.getElementById('guide-search').value.toLowerCase();
+      const items = document.querySelectorAll('.menu-item');
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(q) ? 'block' : 'none';
+      });
+    }
+
+    // ScrollSpy active link highlight
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section.doc-section');
+      const navLinks = document.querySelectorAll('.menu-item a');
+      let current = '';
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 120;
+        if (window.scrollY >= top) {
+          current = sec.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
