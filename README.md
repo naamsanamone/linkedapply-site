@@ -13,8 +13,6 @@ Official public website, interactive user guide manual, Privacy Policy, and Term
 
 * 🌐 **Official Website**: [https://naamsanamone.github.io/linkedapply-site/](https://naamsanamone.github.io/linkedapply-site/)
 * 📖 **Interactive User Guide**: [https://naamsanamone.github.io/linkedapply-site/guide.html](https://naamsanamone.github.io/linkedapply-site/guide.html)
-* 📄 **Download PDF User Manual**: [LinkedApply_Pro_User_Guide.pdf](docs/LinkedApply_Pro_User_Guide.pdf)
-* 📝 **Download Word User Manual (DOCX)**: [LinkedApply_Pro_User_Guide.docx](docs/LinkedApply_Pro_User_Guide.docx)
 * 🔒 **Privacy Policy**: [https://naamsanamone.github.io/linkedapply-site/privacy.html](https://naamsanamone.github.io/linkedapply-site/privacy.html)
 * 📄 **Terms of Service**: [https://naamsanamone.github.io/linkedapply-site/terms.html](https://naamsanamone.github.io/linkedapply-site/terms.html)
 * ⚡ **Install on Chrome**: [Chrome Web Store Listing](https://chromewebstore.google.com/detail/ajgnfmojakmcoicgnmnfefiliaeikmah?utm_source=item-share-cb)
